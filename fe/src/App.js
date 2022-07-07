@@ -13,6 +13,7 @@ import InfoProduk from "./container/infoProduk/index";
 import InfoPenawaran from "./container/infoPenawaran/index";
 import Konfirmasi from './components/Konfirmasi';
 import Update from './components/Update';
+import Buyer from "./container/Buyer/index";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route path='/update/:id' element={<Update />} />
       <Route path="/forminfo" element={<FormInfo />} />
       <Route path="/infopenawaran" element={<InfoPenawaran />} />
+      <Route path="/buyer" element={<Buyer />} />
     </Routes>
   </BrowserRouter>
   );
