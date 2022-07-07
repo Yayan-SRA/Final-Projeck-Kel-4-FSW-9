@@ -1,0 +1,144 @@
+/* buyer/halaman produk */
+.buyer-halaman-produk .container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin: auto;
+  margin-top: 30px;
+  width: 70%;
+}
+
+.buyer-halaman-produk .carousel-indicators {
+  margin-left: 0;
+}
+
+.btn-edit {
+  width: 90%;
+  background-color: #7126b5;
+  margin: 20px 20px 10px 20px;
+  border-radius: 10px;
+  border-color: #7126b5;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.btn-publish {
+  width: 90%;
+  background-color: #ffffff;
+  margin: 5px 20px 20px 20px;
+  border-radius: 10px;
+  border-color: #7126b5;
+  color: #7126b5;
+  padding: 10px;
+  font-size: 14px;
+}
+/* end */
+.product-description .card {
+  background: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  text-align: justify;
+  font-size: 14px;
+  padding: 15px 20px 0px 20px;
+}
+
+.about-product .card {
+  border-radius: 25px;
+  padding: 15px;
+  margin-left: 30px;
+  box-shadow: rgb(0 0 0 / 15%) 1px 1px 5px 1px;
+}
+
+.bargain-button {
+  background-color: #7126b5;
+  border-style: none;
+  margin: 20px;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.about-seller .card {
+  flex-direction: row;
+  padding-left: 10px;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.about-seller .card-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.about-seller .card-text {
+  color: #8a8a8a;
+  font-size: 10px;
+}
+
+.card img {
+  width: 48px;
+  height: 48px;
+}
+
+.bargain-price-btn {
+  background-color: #7126b5;
+  border-style: none;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.bargain-price-btn a:hover {
+  color: #ffffff;
+}
+
+.gambar-jam img {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-jewelry .title-jewelry {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  /* margin-left: 5px; */
+}
+
+.about-jewelry .price-tag {
+  color: #8a8a8a;
+  font-size: 10px;
+}
+
+.card img {
+  display: flex;
+}
+
+.about-jewelry .card {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 3px;
+  margin-top: 20px;
+  background-color: #eeeeee;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.card-jewelry {
+  margin-top: 12px;
+}
