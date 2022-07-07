@@ -1,0 +1,75 @@
+/* buyer/halaman produk */
+.seller-halaman-produk .container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin: auto;
+  margin-top: 30px;
+  width: 70%;
+}
+
+.seller-halaman-produk .carousel-indicators {
+  margin-left: 0;
+}
+
+.btn-edit-seller {
+  width: 90%;
+  background-color: #7126b5;
+  margin: 20px 20px 10px 20px;
+  border-radius: 10px;
+  border-color: #7126b5;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.btn-publish-seller {
+  width: 90%;
+  background-color: #ffffff;
+  margin: 5px 20px 20px 20px;
+  border-radius: 10px;
+  border-color: #7126b5;
+  color: #7126b5;
+  padding: 10px;
+  font-size: 14px;
+}
+/* end */
+.deskripsi-produk .card {
+  background: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  text-align: justify;
+  font-size: 14px;
+  padding: 15px 20px 0px 20px;
+}
+
+.tentang-produk .card {
+  border-radius: 25px;
+  padding: 15px;
+  margin-left: 30px;
+  box-shadow: rgb(0 0 0 / 15%) 1px 1px 5px 1px;
+}
+
+.tentang-seller .card {
+  flex-direction: row;
+  padding-left: 10px;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.tentang-seller .card {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.tentang-seller .card {
+  color: #8a8a8a;
+  font-size: 10px;
+}
+
+.card img {
+  width: 48px;
+  height: 48px;
+}
