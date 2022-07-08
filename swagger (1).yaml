@@ -1,0 +1,336 @@
+swagger: "2.0"
+info:
+  description: ""
+  version: "1.0.0"
+  title: "Online shop"
+basePath: "/v1"
+tags:
+- name: "User"
+  description: "Operations about user"
+- name: "Produk"
+  description: "Operations about Produk"
+- name: "Penjualan"
+  description: "Operations about Seller"
+- name: "Pembelian"
+  description: "Operations about Buyer"
+- name: "Penawaran"
+  description: "Operations about Offer"
+schemes:
+- "http"
+paths:
+  /v1/auth/register:
+    post:
+      tags:
+      - "User"
+      summary: "Register"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+  /v1/auth/login:
+    post:
+      tags:
+      - "User"
+      summary: "Login"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+  /v1/auth/user:
+    get:
+      tags:
+      - "User"
+      summary: " User telah login"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+  /v1/auth/user/editUser:
+    put:
+      tags:
+      - "User"
+      summary: "edit User"
+      description: ""
+      responses:
+        "200":
+          description: "success"   
+  /v1/auth/user/deleteUser:
+    delete:
+      tags:
+      - "User"
+      summary: "delete User"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+
+  /v1/Produk:
+    get:
+      tags:
+      - "Produk"
+      summary: " get produk"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+          
+  /v1/Produk/{id_user}:
+    get:
+      tags:
+      - "Produk"
+      summary: " get produk berdasarkan id user"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+    post:
+      tags:
+      - "Produk"
+      summary: "Create produk"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+    delete:
+      tags:
+      - "Produk"
+      summary: "delete produk"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+          
+    put:
+      tags:
+      - "Produk"
+      summary: "edit produk"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+  /v1/Produk/{id_user}/BeliProduk:
+    post:
+      tags:
+      - "Produk"
+      summary: "Beli produk"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+
+  /v1/penjualan/{id_user}:
+    get:
+      tags:
+      - "Penjualan"
+      summary: " get penjualan berdasarkan id user"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+
+  /v1/penjualan/jumlahproduk:
+    post:
+      tags:
+      - "Penjualan"
+      summary: "submit jumlah produk"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+    get:
+      tags:
+      - "Penjualan"
+      summary: "get jumlah produk"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+    delete:
+      tags:
+      - "Penjualan"
+      summary: "delete jumlah produk"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+    put:
+      tags:
+      - "Penjualan"
+      summary: "put jumlah produk"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+
+  /v1/pembelian/{id_user}:
+    get:
+      tags:
+      - "Pembelian"
+      summary: " get id user"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+
+  /v1/pembelian/{id_user}/jumlahproduk:
+    post:
+      tags:
+      - "Pembelian"
+      summary: "submit jumlah produk"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+    get:
+      tags:
+      - "Pembelian"
+      summary: "get jumlah produk"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+    delete:
+      tags:
+      - "Pembelian"
+      summary: "delete jumlah produk"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+          
+    put:
+      tags:
+      - "Pembelian"
+      summary: "put jumlah produk"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+
+  /v1/pembelian/{id_user}/offer:
+    post:
+      tags:
+      - "Penawaran"
+      summary: "submit Offer"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+    get:
+      tags:
+      - "Penawaran"
+      summary: "get respon "
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+    put:
+      tags:
+      - "Penawaran"
+      summary: "edit jumlah penawaran"
+      parameters:
+      - name: "id_user"
+        in: "path"
+        description: "ID of pet to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      description: ""
+      responses:
+        "200":
+          description: "success"
+          
+          
+
+  
