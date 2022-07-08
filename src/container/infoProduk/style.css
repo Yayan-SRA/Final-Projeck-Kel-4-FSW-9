@@ -1,0 +1,124 @@
+.formulir-info-produk {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.formulir-info-produk textarea {
+  width: 568px;
+}
+
+.button-simpan-produk {
+  color: white;
+  background-color: #7126b5;
+  border-radius: 16px;
+  width: 568px;
+  height: 48px;
+  border-color: #7126b5;
+  margin-top: 20px;
+}
+
+.button-preview-produk {
+  color: #7126b5;
+  background-color: white;
+  border-radius: 16px;
+  width: 568px;
+  height: 48px;
+  border-color: #7126b5;
+  margin-top: 20px;
+}
+
+.button {
+  flex-direction: row;
+  display: flex;
+  width: 580px;
+  justify-content: space-between;
+  grid-gap: 30px;
+}
+
+.input-text-produk {
+  padding: 10px;
+  border-style: solid;
+  border-color: #d0d0d0;
+  width: 568px;
+  height: 48px;
+  border-radius: 16px;
+  margin: 0px 0px 10px;
+}
+
+.label-info-produk input {
+  width: 100%;
+  border-style: solid;
+  border-color: #d0d0d0;
+  height: 48px;
+}
+
+.label-info-produk select {
+  width: 100%;
+  border-style: solid;
+  border-color: #d0d0d0;
+  height: 48px;
+}
+
+.label-info-produk-alamat {
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  width: 568px;
+}
+
+.label-info-produk-alamat textarea {
+  resize: vertical;
+  min-width: 568px;
+}
+
+.back-arrow2 {
+  margin-top: 40px;
+  margin-left: 336px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+
+.form-produk {
+  width: 400px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  align-content: center;
+  margin-top: 50px;
+}
+
+.label-info-produk {
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  width: 568px;
+  margin-top: 10px;
+}
+
+.fotoProduk {
+  width: 96px;
+  height: 96px;
+  border-style: dashed;
+  position: relative;
+  border-radius: 12px;
+  border-color: darkgray;
+  margin-left: -475px;
+}
+
+.plus-icon {
+  width: 20px;
+  height: 20px;
+  color: darkgray;
+  display: flex;
+  margin: auto;
+  margin-top: 30px;
+}
