@@ -21,12 +21,12 @@ module.exports = {
 //     }
 // },
 
-async list() {
+async list() { 
   try {
       const kategori = await productRepository.findAllKategori();
-      const stat = await productRepository.findAllStat();
+    //   const stat = await productRepository.findAllStatus();
       console.log("sere", kategori);
-      return kategori, stat;
+      return kategori;
   } catch (err) {
       throw err;
   }
@@ -38,7 +38,8 @@ create(requestBody) {
 
 async oneProduct({ id }) {
     try {
-        const product = await productRepository.findoneProduct({ id });
+        const product = await productRepository.findOneProduct({ id });
+        // const kategori = await productRepository.findAllKategori();
         // const coba = await productRepository.findAllUkur();
         console.log("cs", product)
         return product;

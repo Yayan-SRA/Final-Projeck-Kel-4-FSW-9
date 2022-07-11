@@ -39,7 +39,7 @@ create(createBody) {
 
 findOneProduct({ id }) {
   return Product.findOne({
-      where: { id: id },
+      where: { id_penjual: id },
       include: [{
           model: Kategori
       }]

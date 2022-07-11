@@ -59,18 +59,29 @@ module.exports = {
         // const token = req.cookies.jwt;
         // const pengguna = req.user;
         const id = req.params.id;
-        console.log("lihat id", id) 
-        const product = await productService.oneProduct({
+        // console.log("lihat id", id) 
+        // const product = await productService.oneProduct({
+        //     id 
+        // })
+        // console.log("lihat cc", product);
+        // // console.log("get id", req.params.id);
+        // // console.log("hasil id", id);
+
+        // const coba = await productService.list()
+        // console.log("coba", coba)
+        // console.log("product", product)
+        // res.status(200);
+
+        await productService
+        .list()
+        await productService
+        .oneProduct({
             id 
         })
-        console.log("lihat cc", product);
-        // console.log("get id", req.params.id);
-        // console.log("hasil id", id);
+        .then((kategori, product) => {
+            res.status(200).json({kategori,product});
+        })
 
-        const coba = await productService.listSize()
-        console.log("coba", coba)
-        console.log("product", product)
-        res.render("edit", { product, coba });
     },
 
     updateProduct(req, res) {

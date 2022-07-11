@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
+import axios from "axios"
+import jwt_decode from "jwt-decode"
+import { useNavigate, useParams, Link } from 'react-router-dom'
 import NavbarMain from '../../components/navbar/NavbarMain'
 import './styles.css'
 import {FiBox, FiPlus} from "react-icons/fi";
@@ -9,7 +12,45 @@ import Card from '../../components/card/Index'
 import NavbarMain2 from '../../components/navbar/NavbarMain2';
 
 export default function SellerDaftarJual() {
-  return (
+    const [token, SetToken] = useState('');
+    const [user, SetUser] = useState('');
+    const [msg, setmsg] = useState("")
+    const navigasi = useNavigate()
+    const [link, SetLink] = useState("")
+  
+  
+    useEffect(() => {
+      fetchdata();
+    }, [])
+  
+    const fetchdata = async () => {
+      // let response = await axios.get("http://localhost:8000/token", {
+      //     withCredentials: "true"
+      // })
+      // if (!response) {
+      //     navigasi("/")
+      //     return
+      // }
+      // response = await fetch(`http://localhost:8000/user/${id}`)
+      // const data = await response.json()
+      // SetUser(data)
+      try {
+        let response = await axios.get("http://localhost:8000/token", {
+          withCredentials: true
+        })
+        SetToken(response.data.accessToken)
+        const decoded = jwt_decode(response.data.accessToken)
+        response = await fetch(`http://localhost:8000/user/${decoded.id}`)
+        const data = await response.json()
+        console.log('data', data)
+        SetUser(data)
+        // console.log('setuser', SetUser(data))
+      } catch (error) {
+        navigasi("/")
+      }
+    }
+  
+    return (
     <div>
         {/* <NavbarMain/> */}
         <NavbarMain2/>
@@ -21,8 +62,8 @@ export default function SellerDaftarJual() {
                 </div>
                 <div className='content-profile'>
                 <div className='text-profile'>
-                        <div className='name-profile'>Nama Penjual</div>
-                        <div className='city-profile'>Kota</div>
+                        <div className='name-profile'>{user.nama}</div>
+                        <div className='city-profile'>{user.kota}</div>
                     </div>
                     <button className='edit-profile'>
                         Edit
@@ -64,17 +105,6 @@ export default function SellerDaftarJual() {
                         <p className='desc-product'>Tambah Produk</p>
                     </div>
                     </div>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
                     <Card/>
                 </div>
             </div>

@@ -18,7 +18,7 @@ GET http://localhost:8000/user/2
 POST http://localhost:8000/login
 Content-Type: application/json
 
-{
+{ 
     "email":"diory@gmail.com",
     "password":"Bacot123"
 }
@@ -57,3 +57,6 @@ GET http://localhost:8000/token
 
 ###
 DELETE  http://localhost:8000/logout
+
+###
+GET http://localhost:8000/v1/Produk/2
