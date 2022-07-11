@@ -1,0 +1,13 @@
+.kategori {
+    margin-left: 136px;
+}
+
+.kategori a {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card-kategori {
+    display: flex;
+    flex-direction: row;
+}

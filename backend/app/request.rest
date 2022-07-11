@@ -1,0 +1,31 @@
+GET http://localhost:8000/v1/Produk
+
+###
+POST http://localhost:8000/v1/Produk/add
+Content-Type: application/json
+
+{
+    "id_penjual": "1",
+    "id_kategori": "4",
+    "nama_produk": "HP X",
+    "harga": "4000000",
+    "stok": "10",
+    "deskripsi": "HP gg buat gaming",
+    "foto": "hpapik.jpg"
+}
+
+###
+PUT http://localhost:8000/v1/Produk/update/1
+Content-Type: application/json
+{
+    "id_penjual": "2",
+    "id_kategori": "1",
+    "nama_produk": "laptop asus",
+    "harga": "1000000",
+    "stok": "20",
+    "deskripsi": "laptop gg buat gaming EPEP",
+    "foto": "laptopapik.jpg"
+}
+
+###
+DELETE http://localhost:8000/v1/produk/delete/2

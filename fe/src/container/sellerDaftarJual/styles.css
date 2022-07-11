@@ -1,0 +1,228 @@
+.seller-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-daftar {
+    position: absolute;
+    width: 171px;
+    height: 30px;
+    left: 158px;
+    top: 124px;
+
+    /* Heading/20/Bold */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height, or 150% */
+    color: #000000;
+}
+
+.seller-profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 10px;
+
+    position: absolute;
+    width: 968px;
+    height: 80px;
+    /* left: 236px; */
+    top: 178px;
+
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+.content-profile {
+    width: 1000px;
+    display: flex;
+    flex-direction: row-;
+    justify-content: space-between;
+}
+
+.seller-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.seller-image img{
+    width: 48px;
+    height: 48px;
+}
+
+.text-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.name-profile {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.city-profile {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #8A8A8A;
+}
+
+.edit-profile {
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    gap: 10px;
+
+    width: 47px;
+    height: 26px;
+
+    /* Neutral/01 */
+
+    background: #FFFFFF;
+    /* Primary/Purple/04 */
+
+    border: 1px solid #7126B5;
+    border-radius: 8px;
+}
+
+.kategori-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 24px;
+
+    position: absolute;
+    width: 268px;
+    height: 248px;
+    left: 158px;
+    top: 282px;
+
+    background: #FFFFFF;
+    /* Shadow/High */
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+.kategori-option {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    /* align-items: space-between; */
+    justify-content: space-between;
+    padding: 0px 0px 16px;
+    gap: 8px;
+    width: 220px;
+    height: 40px;
+    border-bottom: 1px solid #D0D0D0;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.kategori-option-last {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px 0px 16px;
+    gap: 8px;
+    width: 220px;
+    height: 40px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.icon-text-option {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.icon-text-option p{
+    margin-left: 11px;
+}
+
+.icon-box-profile {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-box-chevron {
+    width: 24px;
+    height: 24px;
+}
+
+.cardDaftarJual-wrapper {
+    width: 668px;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    margin-top: 157px;
+    margin-left: 300px;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-card-wrapper {
+    border: 3px dashed #D0D0D0;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 181.33px;
+    /* width: 206px; */
+    height: 198px;
+    box-sizing: border-box;
+    margin-left: 3px;
+    margin-right: 16px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    }
+
+.add-card-img-product {
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .img-product img {
+    width: 100%;
+  }
+
+  .icon-plus{
+    width: 24px;
+    height: 24px;
+  }
+
+    p.desc-product {
+    font-size: 14px;
+    color: #8A8A8A;
+    margin: 0px;
+    margin-bottom: 4px;
+  }
