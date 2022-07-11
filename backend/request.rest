@@ -1,0 +1,59 @@
+
+###
+GET http://localhost:8000
+
+###
+GET http://localhost:8000/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJkaW9yeUBnbWFpbC5jb20iLCJpYXQiOjE2NTU4ODkwNTUsImV4cCI6MTY1NTg4OTA5NX0.M5yBKmRetp8qHBYuQx750X9zlqxUhXAG87JQUxplFIo
+
+###
+GET http://localhost:8000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJzYXlhQGdtYWlsLmNvbSIsImlhdCI6MTY1NTc5MTg4NiwiZXhwIjoxNjU1NzkxOTI2fQ.363iKPFkIxaUNU6yrqycdC5Jy-n9FOrAuPr__jVYcv0
+
+###
+GET http://localhost:8000/user/2
+
+
+###
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+    "email":"diory@gmail.com",
+    "password":"Bacot123"
+}
+
+###
+DELETE http://localhost:8000/deleteuser/8
+
+###
+POST http://localhost:8000/register
+Content-Type: application/json
+
+{
+    "nama":"diory pribadi sinaga",
+    "email":"sifneadga@gmail.com",
+    "password":"abcdefgh",
+    "confpassword":"abcdefgh"
+}
+
+###
+PUT  http://localhost:8000/update/1
+Content-Type: application/json
+
+{
+    "nama":"sinaga pribadi",
+    "kota":"kota",
+    "alamat":"alamat",
+    "nomor_hp":"nomor_hp",
+    "image":"imadge"
+}
+
+###
+GET http://localhost:8000/whoami
+
+###
+GET http://localhost:8000/token
+
+###
+DELETE  http://localhost:8000/logout
