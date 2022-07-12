@@ -188,7 +188,7 @@ module.exports = {
             id 
         })
         .then((product) => {
-            res.status(200).json({product});
+            res.status(200).json(product);
         })
       
       },

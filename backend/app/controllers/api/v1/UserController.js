@@ -12,8 +12,8 @@ const transporter = nodemailer.createTransport({
     auth: {
         // user: 'diorypribadi@gmail.com',
         // pass: 'powexrwoffzenaml'
-        user: 'dioripribadisinaga@gmail.com',
-        pass: 'ttoocznyleaizfhs'
+        user: 'kel4.fsw9@gmail.com',
+        pass: 'nttisxgcftabdkyy'
     }
 });
 

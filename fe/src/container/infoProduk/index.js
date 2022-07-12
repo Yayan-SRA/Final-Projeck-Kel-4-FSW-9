@@ -133,9 +133,10 @@ const InfoProfil = () => {
           deskripsi: deskripsi,
           foto: response.data.url
         })
-        console.log(response.data);
+        console.log('masuk');
+        console.log('yyy', response.data);
         response = await axios.post("http://localhost:8000/v1/Produk/email")
-        console.log(response.data);
+        console.log('hmm', response.data);
         navigasi("/");
       } else {
 
