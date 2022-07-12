@@ -8,6 +8,13 @@ module.exports = {
     console.log("barang", product)
     return product
 },
+//   findAllPenjual(idJual) {
+//     const Penjual = Product.findAll({
+//       where: { id_penjual: idJual }
+//     });
+//     console.log("barang", Penjual)
+//     return Penjual
+// },
 
 //   findOwnProduct() {
 //     const ownProduct = Product.findAll({
@@ -38,7 +45,7 @@ create(createBody) {
 },
 
 findOneProduct({ id }) {
-  return Product.findOne({
+  return Product.findAll({
       where: { id_penjual: id },
       include: [{
           model: Kategori

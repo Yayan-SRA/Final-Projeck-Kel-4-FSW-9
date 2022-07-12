@@ -59,6 +59,8 @@ const InfoProfil = () => {
       SetToken(response.data.accessToken)
       const decoded = jwt_decode(response.data.accessToken)
       response = await fetch(`http://localhost:8000/user/${decoded.id}`)
+      console.log('data2', response)
+      
       const data = await response.json()
       console.log('data', data)
       SetUser(data)
@@ -191,14 +193,17 @@ const InfoProfil = () => {
             <label className="label-info-produk-alamat">Deskripsi</label>
             <textarea className="input-text-produk form-control" rows="3" placeholder="Contoh: barang tahan air" value={deskripsi} onChange={(e) => SetDeskripsi(e.target.value)}></textarea>
             <label className="label-info-produk">Foto Produk</label>
-            <div className="fotoProduk">
               {/* <input type="text" className="input-text-produk" value={foto} onChange={(e)=>SetFoto(e.target.value)} /> */}
-              {/* <FiPlus className="plus-icon" /> */}
-              <input type="file" onChange={uploadFoto} />
-
-              <img className='rounded-circle' style={{ width: "200px", height: "180px" }} src={foto} />
-              <br /><br />
-            </div>
+              
+              
+              {foto ? (
+                        <img className='rounded-circle' style={{ width: "200px", height: "180px" }} src={foto} /> 
+                    ) : (<div className="fotoProduk"><FiPlus className="plus-icon" />
+                    </div>)}
+              {/* <img className='rounded-circle' style={{ width: "200px", height: "180px" }} src={foto} /> */}
+              {/* <br /><br /> */}
+              <input className="upfoto" type="file" required onChange={uploadFoto} />
+            
             <div className="button">
               <button className="button-preview-produk">Preview</button>
             </div>
@@ -210,3 +215,5 @@ const InfoProfil = () => {
   );
 }
 export default InfoProfil;
+
+

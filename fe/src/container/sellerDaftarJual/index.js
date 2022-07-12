@@ -8,7 +8,7 @@ import {FiBox, FiPlus} from "react-icons/fi";
 import {FiChevronRight} from "react-icons/fi";
 import {FiHeart} from "react-icons/fi";
 import {FiDollarSign} from "react-icons/fi";
-import Card from '../../components/card/Index'
+import Card from '../../components/cardSeller/Index'
 import NavbarMain2 from '../../components/navbar/NavbarMain2';
 
 export default function SellerDaftarJual() {
@@ -58,7 +58,7 @@ export default function SellerDaftarJual() {
         <div className='seller-container'>
             <div className='seller-profile-wrapper'>
                 <div className='seller-image'>
-                    <img src={require('../../images/seller.png')}  alt="profile"/>
+                    <img src={user.image}  alt="profile"/>
                 </div>
                 <div className='content-profile'>
                 <div className='text-profile'>

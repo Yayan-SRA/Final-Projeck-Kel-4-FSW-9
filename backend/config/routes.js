@@ -66,6 +66,7 @@ apiRouter.get("/v1/Produk", controllers.api.v1.productController.listAllProduct)
 // apiRouter.get("/ownProduct", controllers.api.v1.productController.listOwnProduct);
 apiRouter.get("/v1/Produk/add/form", controllers.api.v1.productController.formAdd);
 apiRouter.post("/v1/Produk/add", controllers.api.v1.productController.add);
+apiRouter.post("/v1/Produk/email", controllers.api.v1.productController.email);
 apiRouter.post('/api/upload', async (req, res) => {
     try {
         const fileStr = req.body.data;

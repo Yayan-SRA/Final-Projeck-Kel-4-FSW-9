@@ -4,6 +4,7 @@ module.exports = {
   async listProduct() {
     try {
         const product = await productRepository.findAllProduct();
+        // const penjual = await productRepository.findAllPenjual({idJual});
         // console.log("product", product);
         return product;
     } catch (err) {
