@@ -1,0 +1,121 @@
+.img-product2 img {
+  width: "100%";
+}
+
+.icon-next-arrow {
+  padding: 10px; /* ini ditambahkan untuk input ada padding di value input*/
+  border-style: solid;
+  border-color: #d0d0d0;
+  height: 48px;
+  border-radius: 16px;
+  margin: 0px 0px 10px;
+}
+
+.bagidua {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
+}
+
+.img-product2 {
+  margin: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 650px;
+  height: 436px;
+}
+
+.wrapper-product2 {
+  /* display: inline-block;
+  box-sizing: border-box; */
+  /* margin-left: 236px; */
+  background-color: white;
+}
+
+.deskripsi {
+  margin: auto;
+  width: 650px;
+  height: 390px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.keterangan {
+  border-radius: 16px;
+  box-shadow: 0px 0px 4px;
+  width: 336px;
+  height: 266px;
+  margin-top: 10px;
+
+  /* display: flex; */
+  /* grid-column: 2/3; */
+}
+
+.text-keterangan {
+  margin-top: 10px;
+  margin-left: 15px;
+  padding-top: 24px;
+}
+
+.text-keterangan h5 {
+  font-weight: bold;
+}
+
+.text-keterangan p {
+  color: darkgray;
+}
+
+.button-upload-produk {
+  color: white;
+  background-color: #7126b5;
+  border-radius: 16px;
+  width: 304px;
+  height: 48px;
+  padding: 12px 24px 12px 24px;
+  border-color: #7126b5;
+}
+
+.button-edit-produk {
+  color: #7126b5;
+  background-color: white;
+  border-radius: 16px;
+  width: 304px;
+  height: 48px;
+  padding: 12px 24px 12px 24px;
+  margin-top: 10px;
+  border-color: #7126b5;
+}
+
+.seller {
+  width: 336px;
+  height: 80px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 4px;
+  display: grid;
+  flex-direction: row;
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  grid-template-columns: 15% 65%;
+}
+
+.img-seller {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+}
+
+.nama-seller h6 {
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.nama-seller p {
+  color: darkgray;
+}

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.secondhand-img-login {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(360deg, #a06ece 50%, rgba(160, 110, 206, 0) 100%);
+  opacity: 0.5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wrapperLogin {
+  display: grid;
+  grid-template-columns: 50% auto;
+}
+@media only screen and (max-width: 600px) {
+  .bagidua {
+    grid-template-columns: 1fr;
+  }
+  .secondhand-img-login {
+    height: 0;
+    width: 0;
+  }
+}
+.form-login {
+  width: 400px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  margin: 20% auto;
+  align-content: center;
+}
+.icon-password-login {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 13px -40px;
+  background-color: white;
+  border: none;
+  color: gray;
+}
+.title-text-login {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+}
+
+.text-login h6 {
+  text-align: center;
+}
+
+.formulir-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-simpan-login {
+  color: white;
+  background-color: #7126b5;
+  border-radius: 16px;
+  /* width: 568px;  ini dihpus karena lebar sudah diatur oleh form-regist kecual button ingin lebih kecil boleh di tambahkan*/
+  height: 48px;
+  border-color: #7126b5;
+  margin: 20px 0px 5px;
+}
+
+.input-text-login {
+  padding: 10px; /* ini ditambahkan untuk input ada padding di value input*/
+  border-style: solid;
+  border-color: #d0d0d0;
+  height: 48px;
+  border-radius: 16px;
+  margin: 0px 0px 10px;
+}

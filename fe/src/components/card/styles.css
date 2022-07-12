@@ -1,0 +1,73 @@
+.product-wrapper {
+    margin-top: 40px;
+    display: inline-block;
+    width: 181.33px;
+    /* width: 206px; */
+    height: 198px;
+    box-sizing: border-box;
+    margin-left: 3px;
+    margin-right: 16px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    }
+    
+  .img-product {
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    /* margin: 0px; */
+  
+    /* ukuran card movie imdb */
+    /* width: 150px;
+    height: 220px; */
+    
+    /* dibawah ini untuk ukuran youtube */
+    width: 100%;
+    height: 118px;
+  
+    /* ukuran asli dibawah ini*/
+    /* width: 100%;
+    height: 100%; */
+  }
+  
+  .img-product img {
+    width: 100%;
+  }
+  
+
+  .text-product{
+    margin-left: 8px;
+  }
+
+  p.title-product {
+    /* font-weight: 600; */
+    /* text-transform: capitalize; */
+    margin: 0px;
+    color: #000000;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+  
+  p.desc-product {
+    font-size: 14px;
+    color: #8A8A8A;
+    margin: 0px;
+    margin-bottom: 4px;
+  }
+
+  p.price-product {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
