@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background: whitesmoke; */
+  overflow-x: hidden;
+}
+
+.back-arrow3 {
+  /* margin-top: -62px;
+  margin-left: 76px;
+  position: absolute;
+  width: 24px;
+  height: 24px; */
+  margin-top: 40px;
+  margin-left: 336px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+
+.bargain-price-btn {
+  background-color: #7126b5;
+  border-style: none;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.bargain-price-btn a:hover {
+  color: #ffffff;
+}
+/* end */
+
+/* modal status */
+.modal-status .modal-header {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+.desc-status {
+  padding-left: 1.5rem;
+  font-size: 12px;
+  color: #8a8a8a;
+}
+
+.form-check-input:checked {
+  border-color: #7122b5;
+  background-color: #7122b5;
+}
+
+.status-btn {
+  background-color: #7126b5;
+  border-style: none;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.status-btn a:hover {
+  color: #ffffff;
+}
+/* end */
+
+/* modal terima penawaran */
+.about-bargain .card {
+  background-color: #eeeeee;
+  border-radius: 20px;
+  padding: 5px 10px 0px 10px;
+}
+
+.info-buyer .card {
+  flex-direction: row;
+  align-items: center;
+  border-style: none;
+}
+
+.info-buyer .card-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.info-buyer .card-text {
+  color: #8a8a8a;
+  font-size: 10px;
+}
+
+.info-product .card {
+  flex-direction: row;
+  align-items: center;
+  border-style: none;
+}
+
+.info-product .card-text {
+  font-size: 14px;
+}
+
+.wa-btn {
+  background-color: #7126b5;
+  border-style: none;
+  width: 262px;
+  height: 50px;
+  margin-top: 6px;
+  border-radius: 10px;
+  /* margin-top: 20px; */
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+}
+
+.text-wa img {
+  width: 30px;
+}
+/* end */
+
+/* start when bargain process succeed */
+.success-modal .container {
+  width: 75vh;
+  height: 5vh;
+  border-radius: 12px;
+  display: flex;
+  background-color: #73ca5c;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.close-btn button {
+  border: none;
+  background-color: #73ca5c;
+  color: #ffffff;
+  padding-left: 200px;
+}
+
+.disable-bargain-button {
+  background-color: #d0d0d0;
+  border-style: none;
+  margin-top: 20px;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+}
+/* end */
+
+/* Card buyer di bagian page Seller/Penawaran Diterima */
+.about-buyer .card {
+  flex-direction: row;
+  padding-left: 10px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.about-buyer .card-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.about-buyer .card-text {
+  color: #8a8a8a;
+  font-size: 10px;
+}
+/* end */
+
+/* page info penawar */
+.btn-decline {
+  margin-right: 20px;
+  width: 150px;
+  float: right;
+  background-color: #ffffff;
+  border-color: #7126b5;
+  border-radius: 30px;
+  color: #7126b5;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-acc {
+  float: right;
+  width: 150px;
+  background-color: #7126b5;
+  border-style: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+}
+/* end */
+
+/* page penawaran diterima */
+.bargained-product {
+  margin-top: 20px;
+}
+
+.bargained-product .card {
+  flex-direction: row;
+  padding-left: 10px;
+  align-items: center;
+  border: none;
+}
+
+.bargained-product .card-title {
+  color: #8a8a8a;
+  font-size: 10px;
+}
+
+.bargained-product .card-time {
+  color: #8a8a8a;
+  font-size: 10px;
+  float: right;
+}
+
+.bargained-product .card-text {
+  font-size: 16px;
+}
+
+.btn-status {
+  margin-right: 20px;
+  width: 150px;
+  float: right;
+  background-color: #ffffff;
+  border-color: #7126b5;
+  border-radius: 30px;
+  color: #7126b5;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-wa {
+  float: right;
+  width: 150px;
+  background-color: #7126b5;
+  border-style: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+}
+/* end */
+
+/* .mr-20 {
+  margin-right: 20px !important;
+} */
+
+.text-wa {
+  display: flex;
+  flex-direction: row;
+  /* grid-gap: 30px; */
+  margin-top: 4px;
+}
+.modal-content {
+  width: 360px;
+  height: 456px;
+}
+
+.about-bargain .row {
+  margin-left: 0px;
+}
+
+.row > * {
+  margin-left: 0px !important;
+}
+
+.wa-btn img {
+  width: 30px;
+  padding: 3px;
+  margin: auto;
+  margin-top: -4px;
+}
+
+.wa-btn .text-wa {
+  margin-left: 25px;
+}
