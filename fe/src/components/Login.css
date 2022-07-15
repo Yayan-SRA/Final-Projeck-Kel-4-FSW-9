@@ -25,15 +25,7 @@
   display: grid;
   grid-template-columns: 50% auto;
 }
-@media only screen and (max-width: 600px) {
-  .bagidua {
-    grid-template-columns: 1fr;
-  }
-  .secondhand-img-login {
-    height: 0;
-    width: 0;
-  }
-}
+
 .form-login {
   width: 400px;
   height: 70px;
@@ -88,4 +80,60 @@
   height: 48px;
   border-radius: 16px;
   margin: 0px 0px 10px;
+}
+
+@media only screen and (max-width: 550px) {
+  .wrapperLogin {
+    grid-template-columns: none;
+    padding-left: 16px;
+    padding-top: -35px;
+  }
+  body .wrapperLogin {
+    width: 81%;
+  }
+  .secondhand-img-login {
+    display: none;
+  }
+  .form-login .text-login{
+    padding-top: 209px;
+  }
+  .back-arrow2 img {
+    position: absolute;
+    right:323px;
+    top:-5px;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width:550px) {
+  .back-arrow2 img {
+    display: none;
+  }  
+}
+@media screen and (max-width:414px) {
+  .wrapperLogin {
+    padding-top: 20px;
+    width:120%;
+  }
+  .form-login .text-login{
+    padding-top: 250px;
+  }
+}
+
+@media screen and (max-width:861px) {
+  .wrapperLogin {
+    width: 90%;
+    gap: 10px;
+  } 
+  .form-login {
+    width: 120%;
+  }
+  .secondhand-img-login {
+    width:100%;
+  }
+}
+
+@media screen and (min-width:550px) {
+  .form-login .text-login {
+    padding-top: 40px;
+  }
 }
