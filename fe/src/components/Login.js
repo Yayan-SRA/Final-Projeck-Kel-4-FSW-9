@@ -1,5 +1,6 @@
 // import React, { useState } from "react";
 import banner from "../../src/images/SecondHand.jpeg";
+import arrow from "../../src/images/fi_arrow-left.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Login.css";
 import { BsEyeSlash } from "react-icons/bs";
@@ -100,6 +101,10 @@ export default function Login() {
   }
 
   return (
+    <div>
+    <div className="back-arrow2">
+        <img src={arrow} width="100%" alt="" />
+    </div>
     <div className="wrapperLogin">
       <div className="secondhand-img-login">
         <img src={banner} width="100%" alt="" />
@@ -135,6 +140,7 @@ export default function Login() {
         </label>
       </form>
     </div >
+    </div>
   );
 
 }
