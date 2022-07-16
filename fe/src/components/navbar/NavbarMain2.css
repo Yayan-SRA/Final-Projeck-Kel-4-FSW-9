@@ -17,8 +17,10 @@
   background-color: #7126b5;
   width: 100px;
   height: 34px;
-  margin-left: 136px;
+  left: 100px;
+  margin: auto;
   position: absolute;
+  margin-top: -17px;
 }
 
 .navbar-container {
@@ -54,7 +56,7 @@
   border-radius: 16px;
   border-width: 0ch;
   background-color: #EEEEEE;
-;
+  padding-left: 15px;
 }
 
 .search-icon {
