@@ -52,6 +52,14 @@ findOneProduct({ id }) {
       }]
   });
 },
+detailProduct({ id }) {
+  return Product.findOne({
+      where: { id: id },
+      include: [{
+          model: Kategori
+      }]
+  });
+},
 updateProduct({ id }, updateBody) {
   return Product.update(updateBody, { where: { id } });
 },

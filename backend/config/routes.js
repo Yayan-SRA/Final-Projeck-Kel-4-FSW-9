@@ -42,7 +42,7 @@ router.put(
     "/api/v1/profiles/:id/image/cloudinary",
     uploadOnMemory.single("image"),
     (req, res) => {
-    const fileBase64 = req.file.buffer.toString("base64");
+    const fileBase64 = req.file.buffer.toString("base64"); 
     const file = `data:${req.file.mimetype};base64,${fileBase64}`;
 
     cloudinary.uploader.upload(file, function (err, result) {
@@ -63,6 +63,7 @@ router.put(
 
 apiRouter.get("/", controllers.api.v1.productController.listAllProduct);
 apiRouter.get("/v1/Produk", controllers.api.v1.productController.listAllProduct);
+apiRouter.get("/v1/Produk/kategori", controllers.api.v1.productController.listAllKategori);
 // apiRouter.get("/ownProduct", controllers.api.v1.productController.listOwnProduct);
 apiRouter.get("/v1/Produk/add/form", controllers.api.v1.productController.formAdd);
 apiRouter.post("/v1/Produk/add", controllers.api.v1.productController.add);
@@ -107,6 +108,7 @@ router.post(
 );
 apiRouter.put("/v1/Produk/update/:id", controllers.api.v1.productController.updateProduct);
 apiRouter.get("/v1/Produk/:id", controllers.api.v1.productController.selectProduct);
+apiRouter.get("/v1/DetailProduk/:id", controllers.api.v1.productController.detailProduct);
 apiRouter.delete(
   "/v1/produk/delete/:id",
   controllers.api.v1.productController.deleteProduct

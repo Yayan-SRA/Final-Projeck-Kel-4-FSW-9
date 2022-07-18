@@ -59,7 +59,7 @@ GET http://localhost:8000/token
 DELETE  http://localhost:8000/logout
 
 ###
-GET http://localhost:8000/v1/Produk/3
+GET http://localhost:8000/v1/Produk1/23
 
 ###
 GET http://localhost:8000/v1/Produk/1

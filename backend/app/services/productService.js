@@ -40,10 +40,22 @@ create(requestBody) {
 async oneProduct({ id }) {
     try {
         const product = await productRepository.findOneProduct({ id });
+        const product1 = await productRepository.findOneProduct1({ id });
         // const kategori = await productRepository.findAllKategori();
         // const coba = await productRepository.findAllUkur();
         console.log("cs", product)
-        return product;
+        return product, product1;
+    } catch (err) {
+        throw err;
+    }
+},
+async detailProduct({ id }) {
+    try {
+        const detailProduct = await productRepository.detailProduct({ id });
+        // const kategori = await productRepository.findAllKategori();
+        // const coba = await productRepository.findAllUkur();
+        console.log("cs", detailProduct)
+        return detailProduct;
     } catch (err) {
         throw err;
     }

@@ -20,6 +20,14 @@ module.exports = {
                 // res.render("index", { product });
             });
     },
+    listAllKategori(req, res) {
+        productService
+            .list()
+            .then((kategori) => {
+                res.status(200).json(kategori);
+                // res.render("index", { product });
+            });
+    },
 
     // listOwnProduct(req, res){
     //     productService
@@ -135,6 +143,7 @@ module.exports = {
                     model: User
                 }]
             });
+            console.log("ab", result.User.nama);
             const contentEmail = `
                         <h1 style="text-align: center">Hai <span style="color:black;">${result.User.nama}<span/>,</h1>
                         <h3 style="text-align: center">Selamat Berhasil Menambahkan Produk</h3>
@@ -175,6 +184,21 @@ module.exports = {
             })
             .then((product) => {
                 res.status(200).json(product);
+            })
+        // const product = await productService.oneProduct({ id })
+        // res.status(200).json(product);
+    },
+    async detailProduct(req, res) {
+        const id = req.params.id;
+
+        // await productService
+        // .list()
+        await productService
+            .detailProduct({
+                id
+            })
+            .then((detailProduct) => {
+                res.status(200).json(detailProduct);
             })
         // const product = await productService.oneProduct({ id })
         // res.status(200).json(product);
