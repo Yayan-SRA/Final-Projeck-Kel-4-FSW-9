@@ -40,11 +40,11 @@ create(requestBody) {
 async oneProduct({ id }) {
     try {
         const product = await productRepository.findOneProduct({ id });
-        const product1 = await productRepository.findOneProduct1({ id });
+        // const product1 = await productRepository.findOneProduct1({ id });
         // const kategori = await productRepository.findAllKategori();
         // const coba = await productRepository.findAllUkur();
         console.log("cs", product)
-        return product, product1;
+        return product;
     } catch (err) {
         throw err;
     }
@@ -52,10 +52,23 @@ async oneProduct({ id }) {
 async detailProduct({ id }) {
     try {
         const detailProduct = await productRepository.detailProduct({ id });
+        // const detailProduct2 = await productRepository.detailProduct2({ id });
         // const kategori = await productRepository.findAllKategori();
         // const coba = await productRepository.findAllUkur();
         console.log("cs", detailProduct)
         return detailProduct;
+    } catch (err) {
+        throw err;
+    }
+},
+async detailProduct2({ id }) {
+    try {
+        // const detailProduct = await productRepository.detailProduct({ id });
+        const detailProduct2 = await productRepository.detailProduct2({ id });
+        // const kategori = await productRepository.findAllKategori();
+        // const coba = await productRepository.findAllUkur();
+        console.log("cs", detailProduct2)
+        return detailProduct2;
     } catch (err) {
         throw err;
     }

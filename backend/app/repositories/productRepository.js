@@ -1,4 +1,4 @@
-const { Product, Kategori, Status } = require("../models");
+const { Product, Kategori, Status, User } = require("../models");
 
 module.exports = {
   findAllProduct() {
@@ -56,10 +56,20 @@ detailProduct({ id }) {
   return Product.findOne({
       where: { id: id },
       include: [{
-          model: Kategori
+          model: Kategori 
       }]
-  });
+  }); 
 },
+detailProduct2({ id }) {
+  return Product.findOne({
+      where: { id: id },
+      include: 
+      [{
+        model: User
+      }]
+  }); 
+},
+
 updateProduct({ id }, updateBody) {
   return Product.update(updateBody, { where: { id } });
 },

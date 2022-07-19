@@ -94,7 +94,7 @@ module.exports = {
         for (let i = 1; i <= pro.length; i++) {
             panjang += 1
         }
-        if (panjang >= 4) {
+        if (panjang >= 50) {
             return res.status(403).json({ msg: `Maaf Anda Sudah Memposting ${panjang} Produk` })
         }
         productService
@@ -191,17 +191,13 @@ module.exports = {
     async detailProduct(req, res) {
         const id = req.params.id;
 
-        // await productService
-        // .list()
-        await productService
-            .detailProduct({
-                id
-            })
-            .then((detailProduct) => {
-                res.status(200).json(detailProduct);
-            })
+        const product = await productService.detailProduct({id})
+        const coba = await productService.detailProduct2({id})
+            // .then((kategori, detailProduct) => {
+            //     res.status(200).json(kategori,detailProduct);
+            // })
         // const product = await productService.oneProduct({ id })
-        // res.status(200).json(product);
+        res.status(200).json({product, coba});
     },
     updateProduct(req, res) {
         const id = req.params;
