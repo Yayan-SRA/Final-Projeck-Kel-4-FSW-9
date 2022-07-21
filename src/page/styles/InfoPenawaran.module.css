@@ -8,6 +8,14 @@
     padding: 17px;
     margin:10px
 }
+.atas1 {
+    background: #FFFFFF;
+    /* Shadow/High */
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15); */
+    border-radius: 16px;
+    padding: 17px;
+    margin:10px
+}
 
 .kanan {
     /* padding: 17px; */
@@ -30,3 +38,7 @@
     /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15); */
     border-radius: 16px;
     }
+
+.bagian{
+    text-align: center;
+}

@@ -98,7 +98,7 @@ export default function PreviewProduk() {
             duration: 5000
         })
     }
-
+console.log("apajal",penjual.id)
     const tawar = async (e) => {
         e.preventDefault();
         try {
