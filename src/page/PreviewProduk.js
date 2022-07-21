@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Nav from "../components/Nav"
 import { BsListUl, BsPerson } from 'react-icons/bs';
 import { IoMdNotificationsOutline } from "react-icons/io"
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import style from "./styles/Preview.module.css"
 import { Button } from "react-bootstrap"
 import toast, { Toaster } from 'react-hot-toast';
@@ -12,11 +12,18 @@ import jwt_decode from 'jwt-decode';
 import secondHand from "../image/camera.png"
 
 export default function PreviewProduk() {
-    const [user, SetUser] = useState("")
+    const [user, setUser] = useState("")
     const [product, setProducts] = useState([])
+    const [id_status, setId_status] = useState("3")
+    const [jumlah, setJumlah] = useState("")
+    const [penawaranharga, setPenawaranHarga] = useState("")
     const { id } = useParams()
     const [kategori, setKategori] = useState([])
     const [penjual, setPenjual] = useState([])
+    const [keterangan, setKeterangan] = useState("")
+    const [msg, setmsg] = useState("")
+    const [link, SetLink] = useState("")
+    const [coba, setCoba] = useState("")
 
     useEffect(() => {
         fetchdata()
@@ -30,7 +37,7 @@ export default function PreviewProduk() {
             const decoded = jwt_decode(response.data.accessToken)
             response = await fetch(`http://localhost:8000/user/${decoded.id}`)
             const data = await response.json()
-            SetUser(data)
+            setUser(data)
             // response = await axios.get(`http://localhost:8000/v1/Produk/preview/${id}`)
             response = await axios.get(`http://localhost:8000/v1/Produk/preview/${id}`)
             // console.log(response.data.Kategori.macam)
@@ -38,10 +45,13 @@ export default function PreviewProduk() {
             setPenjual(response.data.User)
             console.log(response.data);
             setProducts(response.data)
+            response = await axios.get(`http://localhost:8000/v1/penawaranBuyer/${decoded.id}`)
+            setCoba(response.data)
         } catch (error) {
             navigasi("/")
         }
     }
+    console.log("tes", coba)
     const formatRupiah = (money) => {
         return new Intl.NumberFormat('id-ID', {
             style: 'currency',
@@ -69,6 +79,59 @@ export default function PreviewProduk() {
             });
     }
 
+    const berhasil = () => {
+        const content = <strong>Berhasil Mengajukan Penawaran</strong>
+        toast.success(content, {
+            duration: 4000,
+            // Styling
+            style: { background: '#73CA5C', color: 'white', padding: "22px" },
+            className: '',
+            ariaProps: {
+                role: 'status',
+                'aria-live': 'polite',
+            },
+        })
+    }
+
+    const gagal = (pesan) => {
+        toast.error(pesan, {
+            duration: 5000
+        })
+    }
+
+    const tawar = async (e) => {
+        e.preventDefault();
+        try {
+            if (user.kota == null || user.alamat == null || user.nomor_hp == null || user.image == null) {
+                setmsg("Lengkapi Profil Dulu!!")
+                SetLink(user.id)
+                gagal("Lengkapi Profil Terlebih Dahulu")
+                return
+            }
+                await axios.post("http://localhost:8000/v1/penawaran/add", {
+                    id_user: user.id,
+                    id_produk: product.id,
+                    id_penjual: penjual.id,
+                    id_status: id_status,
+                    jumlah: jumlah,
+                    penawaranHarga: penawaranharga,
+                    ketNegosiasi: keterangan
+                })
+                // response = await axios.post("http://localhost:8000/v1/Produk/email")
+                // navigasi("/home");
+                berhasil()
+                // console.log(error.msg)
+        } catch (error) {
+            console.log(error);
+            if (error.response) {
+                setmsg(error.response.data.msg)
+                console.log(error.response.data);
+            }
+            const pesan = <strong>{error.response.data.msg}</strong>
+            gagal(pesan)
+        }
+    }
+
     const navigasi = useNavigate()
     const content1 = <div>
         <BsListUl onClick={() => navigasi("/daftarjual")} style={{ width: "47px", height: "25px", cursor: "pointer" }} />
@@ -91,6 +154,11 @@ export default function PreviewProduk() {
             <div className='container-fluid p-4'>
                 <div className='row justify-content-md-center g-1'>
                     <div className='col-lg-6'>
+                        <h4 className='text-center'>
+                            {msg}<span style={{ display: "block" }} className='mx-1'>
+                                {link == "" ? "" : <Link style={{ textDecoration: "none" }} to={"/infoprofil"}>Lengkapi</Link>}
+                            </span>
+                        </h4>
                         <img className='p-4' src={product.foto} width="100%" />
                         <div className={style.kanan}>
                             <strong style={{ fontSize: "20px" }}>Deskripsi</strong><br />
@@ -107,7 +175,8 @@ export default function PreviewProduk() {
                             <strong className='mt-3 d-block'>{formatRupiah(product.harga)}</strong>
                             <div className='row'>
                                 <div className='col-lg-12 col-12'>
-                                    {product.id_penjual != user.id ? <Button className="form-control mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style={{
+                                    {product.id_penjual != user.id ? 
+                                    <Button className="form-control mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style={{
                                         background: '#7126B5',
                                         borderColor: '#7126B5',
                                         borderRadius: '16px',
@@ -146,18 +215,35 @@ export default function PreviewProduk() {
                                                         </div>
                                                         <div className="">
                                                             <strong >{product.nama_produk}</strong>
-                                                            <h6>{formatRupiah(product.harga)}</h6>
+                                                            <h6>{formatRupiah(product.harga)} x {jumlah} <i>pcs</i> </h6>
+                                                            <h6>{formatRupiah((product.harga)*jumlah)} </h6>
                                                         </div>
                                                     </div>
                                                     <div className='mt-3'>
+                                                        <strong>Jumlah</strong>
+                                                        <input type="number" max={product.stok} value={jumlah} onChange={(e) => setJumlah(e.target.value)} className='form-control' style={{
+                                                            border: "1px solid #D0D0D0",
+                                                            borderRadius: '16px',
+                                                            padding: '12px 16px',
+                                                        }} placeholder="pcs" />
+                                                    </div>
+                                                    <div className='mt-3'>
                                                         <strong>Harga Tawar</strong>
-                                                        <input className='form-control' style={{
+                                                        <input value={penawaranharga} onChange={(e) => setPenawaranHarga(e.target.value)} className='form-control' style={{
                                                             border: "1px solid #D0D0D0",
                                                             borderRadius: '16px',
                                                             padding: '12px 16px',
                                                         }} placeholder="Rp 0.0" />
                                                     </div>
-                                                    <Button className="form-control mt-2" style={{
+                                                    <div className='mt-3'>
+                                                        <strong>keterangan</strong>
+                                                        <input value={keterangan} onChange={(e) => setKeterangan(e.target.value)} className='form-control' style={{
+                                                            border: "1px solid #D0D0D0",
+                                                            borderRadius: '16px',
+                                                            padding: '12px 16px',
+                                                        }} placeholder="Jika mau harga segini langsung ane bayar gan" />
+                                                    </div>
+                                                    <Button onClick={(e) => tawar (e)}  className="form-control mt-2" style={{
                                                         background: '#7126B5',
                                                         borderColor: '#7126B5',
                                                         borderRadius: '16px',
