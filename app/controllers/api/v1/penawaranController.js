@@ -1,7 +1,20 @@
-// const {Product} = require("../../../models");
+const { Product, Penawaran } = require("../../../models");
 const penawaranService = require("../../../services/penawaranService");
 
 module.exports = {
+    async findProduk(req, res) {
+        const id = req.params.id
+
+        // Penawaran.findAll({
+        //     where: { id_produk: id_produk }
+        // }).then((tawar) => {
+        //     res.json(tawar)
+        // })
+        penawaranService.listProduk({ id })
+            .then((penawaran) => {
+                res.status(201).json(penawaran)
+            })
+    },
     formPenawaran(req, res) {
         penawaranService
             .listPenawaran()

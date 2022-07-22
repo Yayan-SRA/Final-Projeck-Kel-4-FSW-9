@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         id_user: DataTypes.INTEGER,
         id_pembeli: DataTypes.INTEGER,
         id_produk: DataTypes.INTEGER,
+        id_penawaran: DataTypes.INTEGER,
         dibaca: DataTypes.BOOLEAN
     }, {
         sequelize,

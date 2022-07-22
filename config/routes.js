@@ -75,6 +75,7 @@ apiRouter.post("/v1/penawaran/add", controllers.api.v1.penawaranController.penaw
 apiRouter.put("/v1/penawaran/update/:id", controllers.api.v1.penawaranController.updatePenawaran);
 apiRouter.get("/v1/penawaran/:id", controllers.api.v1.penawaranController.tawaran);
 apiRouter.get("/v1/penawaranBuyer/:id", controllers.api.v1.penawaranController.tawaranBuatBuyer);
+apiRouter.get("/penawaranProduk/:id", controllers.api.v1.penawaranController.findProduk);
 
 apiRouter.post('/api/upload', async (req, res) => {
     try {

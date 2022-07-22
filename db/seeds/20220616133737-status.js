@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -11,19 +11,25 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-     await queryInterface.bulkInsert('Statuses', [{
+    await queryInterface.bulkInsert('Statuses', [{
       stat: 'BErhasil Terjual',
       // isBetaMember: false
-    },{
-      stat: 'Negoisasi di WhatsApp'
-    },{
-      stat: 'Penawaran'
-    },{
-      stat: 'Batal'
+    }, {
+      stat: 'Negoisasi di WhatsApp',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }, {
+      stat: 'Penawaran',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }, {
+      stat: 'Batal',
+      createdAt: new Date(),
+      updatedAt: new Date(),
     }], {});
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *

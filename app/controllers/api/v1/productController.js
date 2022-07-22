@@ -10,9 +10,9 @@ const transporter = nodemailer.createTransport({
         user: 'kel4.fsw9@gmail.com',
         pass: 'nttisxgcftabdkyy'
     }
-});     
+});
 
-module.exports = { 
+module.exports = {
     listAllProduct(req, res) {
         productService
             .listProduct()

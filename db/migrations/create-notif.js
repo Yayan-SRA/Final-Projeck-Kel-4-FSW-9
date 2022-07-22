@@ -17,6 +17,9 @@ module.exports = {
             id_produk: {
                 type: Sequelize.INTEGER
             },
+            id_penawaran: {
+                type: Sequelize.INTEGER
+            },
             dibaca: {
                 type: Sequelize.BOOLEAN
             },
