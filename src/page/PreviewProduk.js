@@ -22,7 +22,7 @@ export default function PreviewProduk() {
     const [kategori, setKategori] = useState([])
     const [penjual, setPenjual] = useState([])
     const [produk, setProduk] = useState([])
-    const [keterangan, setKeterangan] = useState("")
+    // const [keterangan, setKeterangan] = useState("")
     const [msg, setmsg] = useState("")
     const [link, SetLink] = useState("")
     const [coba, setCoba] = useState("")
@@ -112,8 +112,7 @@ export default function PreviewProduk() {
                 id_penjual: penjual.id,
                 id_status: id_status,
                 jumlah: jumlah,
-                penawaranHarga: penawaranharga,
-                ketNegosiasi: keterangan
+                penawaranHarga: penawaranharga
             })
 
             berhasil()
@@ -345,14 +344,6 @@ export default function PreviewProduk() {
                                                             padding: '12px 16px',
                                                         }} className='form-control' displayType={'input'} thousandSeparator={'.'} decimalSeparator={','} prefix={'Rp'} placeholder="Rp 0.0" />
                                                 
-                                                    </div>
-                                                    <div className='mt-3'>
-                                                        <strong>keterangan</strong>
-                                                        <input value={keterangan} onChange={(e) => setKeterangan(e.target.value)} className='form-control' style={{
-                                                            border: "1px solid #D0D0D0",
-                                                            borderRadius: '16px',
-                                                            padding: '12px 16px',
-                                                        }} placeholder="Jika mau harga segini langsung ane bayar gan" />
                                                     </div>
                                                     <Button onClick={(e) => tawar(e)} className="form-control mt-2" style={{
                                                         background: '#7126B5',

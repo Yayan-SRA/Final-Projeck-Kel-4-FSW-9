@@ -16,13 +16,8 @@ export default function InfoPenawaran() {
     const [token, SetToken] = useState('');
     const navigasi = useNavigate()
     const [kategori, setKategori] = useState([])
-    const [modalTerima, setModalTerima] = useState(false);
     const [user, SetUser] = useState("");
     const [produk, setProduk] = useState([]);
-    const [harga, setHarga] = useState([]);
-    const [deskripsi, SetDeskripsi] = useState([]);
-    const [produkIndex, setProdukIndex] = useState(0);
-    const [tawar, setTawar] = useState("");
     const [nomor, setNomor] = useState("");
     const [id_penawaran, setId_penawaran] = useState("");
     const [coba, setCoba] = useState("");
@@ -116,21 +111,55 @@ export default function InfoPenawaran() {
     }
     const hubungi = () => {
         console.log("tes", nomor)
-        window.open(`https://wa.me/${nomor}`);
+        let cekNomor = nomor.substring(0, 1);
+        let cekNomor1 = nomor.substring(0, 2);
+        if(cekNomor == 0){
+            let hasilCek = nomor.substring(1);
+            console.log("cek no2", hasilCek)
+            window.open(`https://wa.me/62${hasilCek}`);
+            window.location.reload();
+        } else if(cekNomor1 == 62){
+            window.open(`https://wa.me/${nomor}`);
+            window.location.reload();
+        } else {
+            window.open(`https://wa.me/${nomor}`);
+            window.location.reload();
+        }
     }
     const negoisasi = async () => {
         console.log("tes", nomor)
         console.log("tes2", id_penawaran)
-        try {
-            let response = await axios.put(`http://localhost:8000/v1/penawaran/update/${id_penawaran}`, {
-                id_status: "2",
-            })
-            console.log('uji', response.data)
-        } catch (error) {
-            console.log(error)
+        let cekNomor = nomor.substring(0, 1);
+        let cekNomor1 = nomor.substring(0, 2);
+        console.log("cek no", cekNomor)
+        if(cekNomor == 0){
+            let hasilCek = nomor.substring(1);
+            console.log("cek no2", hasilCek)
+            try {
+                let response = await axios.put(`http://localhost:8000/v1/penawaran/update/${id_penawaran}`, {
+                    id_status: "2",
+                })
+                console.log('uji', response.data)
+            } catch (error) {
+                console.log(error)
+            }
+            window.open(`https://wa.me/62${hasilCek}`);
+            window.location.reload();
+        } else if (cekNomor1 == 62){
+            try {
+                let response = await axios.put(`http://localhost:8000/v1/penawaran/update/${id_penawaran}`, {
+                    id_status: "2",
+                })
+                console.log('uji', response.data)
+            } catch (error) {
+                console.log(error)
+            }
+            window.open(`https://wa.me/${nomor}`);
+            window.location.reload();
+        }else {
+            window.open(`https://wa.me/${nomor}`);
+            window.location.reload();
         }
-        window.open(`https://wa.me/${nomor}`);
-        window.location.reload();
     }
 
     const formatRupiah = (money) => {
@@ -400,15 +429,60 @@ export default function InfoPenawaran() {
                                                             <div className='row justify-content-end'>
 
                                                                 <div className='col-lg-3 col-3'>
-                                                                    <Button className="form-control mt-2" style={{
+                                                                    <Button type="button" 
+                                                                    onClick={() => {
+                                                                        setStatus('4')
+                                                                        setId_penawaran(data.id);
+                                                                    }
+                                                                }
+                                                                    className="form-control mt-2" style={{
                                                                         background: '#FFFFFF',
                                                                         color: '#151515',
                                                                         borderColor: '#7126B5',
                                                                         borderRadius: '16px',
                                                                         padding: '12px 16px',
-                                                                    }}>
+                                                                    }} data-bs-toggle="modal" data-bs-target="#tolak">
                                                                         Tolak
                                                                     </Button>
+                                                                </div>
+                                                                <div className="modal fade" id="tolak" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                    <div className="modal-dialog modal-dialog-centered">
+                                                                        <div className="modal-content">
+                                                                            <div className="modal-header">
+                                                                                <h4 className="modal-title">Konfirmasi</h4>
+                                                                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                            </div>
+                                                                            <div className="modal-body">
+                                                                                <strong className='m-2'>Apakah anda yakin ingin menolak tawaran ini?</strong>
+                                                                                <br />
+                                                                                <br />
+                                                                                <div className='row justify-content-end'>
+                                                                                    <div className='col-lg-3 col-3'>
+                                                                                        <Button type='button' data-bs-dismiss="modal" className="form-control mt-2" style={{
+                                                                                            background: '#FFFFFF',
+                                                                                            color: '#151515',
+                                                                                            borderColor: '#7126B5',
+                                                                                            borderRadius: '16px',
+                                                                                            padding: '12px 16px',
+                                                                                        }}>
+                                                                                            BATAL
+                                                                                        </Button>
+                                                                                    </div>
+                                                                                    <div className='col-lg-3 col-3'>
+                                                                                        <Button type="button" onClick={()=>kirim ()
+                                                                                        } className="btn form-control mt-2" style={{
+                                                                                            background: '#7126B5',
+                                                                                            borderColor: '#7126B5',
+                                                                                            borderRadius: '16px',
+                                                                                            padding: '12px 16px',
+                                                                                        }}>
+                                                                                            IYA
+                                                                                        </Button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div className='col-lg-3 col-3'>
                                                                     <Button className="form-control mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style={{
@@ -444,8 +518,8 @@ export default function InfoPenawaran() {
                                                                                             </div>
                                                                                             <div>
                                                                                                 <strong >{data.Product.nama_produk}</strong>
-                                                                                                <p className={style.hargaAwal}>Rp {data.Product.harga * data.jumlah} </p>
-                                                                                                <p className={style.harga}> Ditawar Rp {data.penawaranHarga}</p>
+                                                                                                <p className={style.hargaAwal}> {formatRupiah(data.Product.harga * data.jumlah)} </p>
+                                                                                                <p className={style.harga}> Ditawar  {formatRupiah(data.penawaranHarga)}</p>
                                                                                                 {/* <h6>Rp ({total})</h6> */}
                                                                                             </div>
                                                                                         </div>

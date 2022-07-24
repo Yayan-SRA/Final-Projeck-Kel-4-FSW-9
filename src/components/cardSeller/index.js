@@ -127,7 +127,10 @@ export default function CardSeller() {
                     </Button>
                 </div>
                 <div className='col-12 col-xs-6 col-sm-2 col-l-2'>
-                    <Button type="button" onClick={() => setDaftar(false)} className="btn form-control mt-2" style={{
+                    <Button type="button" onClick={() => {
+                        setDaftar(false);
+                        setJenis("disukai");
+                    }} className="btn form-control mt-2" style={{
                         background: '#7126B5',
                         borderColor: '#7126B5',
                         borderRadius: '16px',
